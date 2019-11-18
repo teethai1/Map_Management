@@ -31,6 +31,7 @@ Public Class formMain
             tbPath.Text = PathT
             lbMode.Text = ModeData
             If lbMode.Text = "Upload" Then
+                tbPath.Text = frmQR.PathTransfer
                 tbPath.Clear()
                 tbPath.Enabled = False
                 btbrowser.Enabled = False
@@ -54,7 +55,12 @@ Public Class formMain
 
             tbPath.Enabled = False
             btbrowser.Enabled = False
-
+            If lbMode.Text = "Upload" Then
+                tbPath.Text = frmQR.PathTransfer
+                Dim arrayLot As String() = tbPath.Text.Split("\")
+                Dim lotno As String = arrayLot(arrayLot.Length - 1)
+                lbLot.Text = lotno
+            End If
         End If
 
     End Sub
@@ -197,7 +203,7 @@ Public Class formMain
 
         Else
             Dim folderMode As String = Path.Combine("D:\SelCon MapOSFT", lbMode.Text)
-            Dim FlobbyDisk As String = "A:\"
+            Dim FlobbyDisk As String = tbPath.text
             Dim BinMapUpload As Byte() = Nothing
 
             If Not Directory.Exists(folderMode) Then

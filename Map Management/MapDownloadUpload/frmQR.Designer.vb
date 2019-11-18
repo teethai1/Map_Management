@@ -22,14 +22,15 @@ Partial Class frmQR
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Me.ProBar1 = New System.Windows.Forms.ProgressBar
-        Me.lbCaption = New System.Windows.Forms.Label
-        Me.tbrev = New System.Windows.Forms.TextBox
+        Me.components = New System.ComponentModel.Container()
+        Me.ProBar1 = New System.Windows.Forms.ProgressBar()
+        Me.lbCaption = New System.Windows.Forms.Label()
+        Me.tbrev = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.MapViewer = New System.Windows.Forms.Button
-        Me.Upload = New System.Windows.Forms.Button
-        Me.Download = New System.Windows.Forms.Button
+        Me.MapViewer = New System.Windows.Forms.Button()
+        Me.Upload = New System.Windows.Forms.Button()
+        Me.Download = New System.Windows.Forms.Button()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.SuspendLayout()
         '
         'ProBar1
@@ -128,4 +129,5 @@ Partial Class frmQR
     Friend WithEvents Upload As System.Windows.Forms.Button
     Friend WithEvents MapViewer As System.Windows.Forms.Button
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class

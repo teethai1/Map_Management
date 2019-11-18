@@ -86,8 +86,14 @@
         ElseIf bt.Name = "MapViewer" Then
             PathTransfer = ""
             Me.BackColor = Color.Gold
-        Else
-            Me.BackColor = Color.Salmon
+        Else 'Upload
+            PathTransfer = ""
+            Dim frm As FolderBrowserDialog = New FolderBrowserDialog
+            frm.ShowDialog()
+            If frm.SelectedPath <> "" Then
+                PathTransfer = frm.SelectedPath
+                Me.DialogResult = Windows.Forms.DialogResult.Yes
+            End If
         End If
 
         Download.Visible = False
